@@ -1,0 +1,9 @@
+---
+- hots: all
+  become: yes
+  tasks:
+    name: I want to install apache2
+    apt:
+      name: apache2
+      state: present
+    
