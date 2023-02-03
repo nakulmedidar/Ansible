@@ -1,0 +1,15 @@
+---
+- name: i want to downlode apache tomcat9
+  get_url: https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz
+  dest: /home/ubuntu/temp
+  force_basic_auth: yes
+
+- name: i want to create tomcat directory
+  file:
+    path: /opt/tomcat
+    state: directory
+
+- name: i want to extract the tomcat file
+  command:
+    cmd: sudo tar xzvf /home/ubuntu/temp -c /opt/tomcat --strip-components=1
+    creates: /opt/tomcat/LICENSEs

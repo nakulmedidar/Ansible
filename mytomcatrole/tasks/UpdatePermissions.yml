@@ -1,0 +1,37 @@
+---
+- name: Give the tomcat group ownership
+  file:
+    path: /opt/tomcat
+    state: directory
+    resourse: yes
+    owner: tomcat
+    group: tomcat
+
+- name: Chage file ownership of opt tomcat conf folder
+  file:
+    path: /opt/tomcat/conf
+    resourse: yes
+    mode: g+r
+    state: directory
+
+# give the tomcat group execute access to the conf directory and all 
+- name: tomcat group read access to the conf directory
+  file:
+    path: /opt/tomcat/conf
+    mode: g+r
+    state: directory
+
+- name: Chage file ownership of webapps
+  file:
+    path: /opt/tomcat/webapps
+    resourse: yes
+    owner: tomcat
+    state: directory
+
+- name: Chage file ownership of work
+  file:
+    path: /opt/tomcat/work
+    resourse: yes
+    owner: tomcat
+    state: directory
+  
