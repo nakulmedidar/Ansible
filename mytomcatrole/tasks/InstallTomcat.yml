@@ -1,3 +1,4 @@
+---
 - name: downloade a tar file
   get_url:
     url: https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz
@@ -11,5 +12,5 @@
 
 - name: i want to extract the tomcat file
   command:
-    cmd: sudo tar xzvf apache-tomcat-*tar.gz -C /opt/tomcat --strip-components=1
+    cmd: sudo tar xzvf /home/ubuntu/temp -C /opt/tomcat --strip-components=1
     creates: /opt/tomcat/LICENSE
