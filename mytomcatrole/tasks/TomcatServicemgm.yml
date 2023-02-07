@@ -1,7 +1,7 @@
 ---
 - name: copy tomcat user file into nodes side
   template:
-    src: template/temuser.j2
+    src: template/tomuser.j2
     dest: /opt/tomcat/conf/tomcat-user.xml
 
 - name: copy tomcat context file into nodes side
